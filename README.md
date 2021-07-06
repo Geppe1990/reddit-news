@@ -1,6 +1,4 @@
-# cloud-academy-assessment
-
-Empty project.
+# Reddit News
 
 ## Building and running on localhost
 

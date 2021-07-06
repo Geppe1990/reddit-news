@@ -1,11 +1,13 @@
 import React from "react";
 import "./home.scss";
-import { example } from "./helpers";
+import ArticlesList from "../articlesList/articlesList";
 
 const Home = () => {
-	example("Test");
-
-	return <div className="home">This is the home</div>;
+	return (
+		<div className="home">
+			<ArticlesList />
+		</div>
+	);
 };
 
 export default Home;
