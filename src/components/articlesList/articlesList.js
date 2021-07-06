@@ -3,9 +3,9 @@ import "./articlesList.scss";
 import { get } from "../../helpers";
 
 const ArticlesList = () => {
-	const [errorMessage, setErrorMessage] = useState("");
+	// const [errorMessage, setErrorMessage] = useState("");
 	const [articles, setArticles] = useState([]);
-	const [title, setTitle] = useState("");
+	// const [title, setTitle] = useState("");
 
 	useEffect(() => {
 		get(
@@ -13,7 +13,7 @@ const ArticlesList = () => {
 			(response) => {
 				setArticles(response.data.data.children);
 			},
-			setErrorMessage
+			// setErrorMessage
 		);
 	}, []);
 
