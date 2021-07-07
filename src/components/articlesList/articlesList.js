@@ -19,34 +19,38 @@ const ArticlesList = () => {
 	}, []);
 
 	return (
-		<div className="ArticlesList section">
-			<div className="container">
-				<h2 className="title">Wallpapers</h2>
-				{articles.length > 0 ? (
-					<ul>
-						{articles.map((key) => (
-							<li key={key.data.id} className="mb-6">
-								<div className="card">
-									<div className="card-content">
-										<div className="is-flex is-justify-content-space-between is-align-content-center">
-											<h3 className="is-inline m-0">
-												{key.data.title}
-											</h3>
-											<a
-												href={`https://reddit.com${key.data.permalink}`}
-												target="_blank"
-												rel="noreferrer"
-											>
-												<FaExternalLinkAlt />
-											</a>
+		<div className="columns">
+			<div className="column is-three-quarters">
+				<div className="ArticlesList section">
+					<div className="container">
+						<h2 className="title">Wallpapers</h2>
+						{articles.length > 0 ? (
+							<ul>
+								{articles.map((key) => (
+									<li key={key.data.id} className="mb-6">
+										<div className="card">
+											<div className="card-content">
+												<div className="is-flex is-justify-content-space-between is-align-content-center">
+													<h3 className="is-inline m-0">
+														{key.data.title}
+													</h3>
+													<a
+														href={`https://reddit.com${key.data.permalink}`}
+														target="_blank"
+														rel="noreferrer"
+													>
+														<FaExternalLinkAlt />
+													</a>
+												</div>
+												<p>{key.data.selftext}</p>
+											</div>
 										</div>
-										<p>{key.data.selftext}</p>
-									</div>
-								</div>
-							</li>
-						))}
-					</ul>
-				) : null}
+									</li>
+								))}
+							</ul>
+						) : null}
+					</div>
+				</div>
 			</div>
 		</div>
 	);
