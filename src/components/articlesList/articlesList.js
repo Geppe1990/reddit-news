@@ -11,7 +11,7 @@ const ArticlesList = () => {
 		get(
 			"https://www.reddit.com/r/wallpapers/top.json?limit=30&t=day",
 			(response) => {
-				setArticles(response.data.data.children);
+				setArticles(response.data.children);
 			} // setErrorMessage
 		);
 	}, []);

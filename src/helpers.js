@@ -8,7 +8,7 @@ export const get = (url, callback, errorCallback) => {
 	axios
 		.get(url)
 		.then((response) => {
-			callback(response);
+			callback(response.data);
 		})
 		.catch((error) => _errorsManager(error, errorCallback));
 };
