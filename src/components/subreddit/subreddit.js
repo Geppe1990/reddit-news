@@ -4,7 +4,7 @@ import { Card, CardColumns } from "react-bootstrap";
 
 const Subreddit = ({ title, path }) => {
 	const [posts, setPosts] = useState([]);
-	console.log(posts);
+
 	useEffect(() => {
 		get(
 			`https://www.reddit.com/r/${path}/top.json?limit=15&t=day`,
