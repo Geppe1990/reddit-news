@@ -1,5 +1,4 @@
 import React from "react";
-import "./articlesList.scss";
 import { endpoints } from "../../endpoints";
 import Category from "../category/category";
 import { Container, Row, Col } from "react-bootstrap";
@@ -9,6 +8,7 @@ const ArticlesList = () => {
 		<Container>
 			<Row>
 				<Col md={8}>
+					{/* Qui al posto del map devi matchare la categoria dei parametri url con quella presente dentro la configurazione */}
 					{endpoints.map((endpoint, index) => (
 						<Category
 							key={index}
