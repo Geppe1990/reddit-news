@@ -2,24 +2,23 @@ import React from "react";
 import "./articlesList.scss";
 import { endpoints } from "../../endpoints";
 import Category from "../category/category";
+import { Container, Row, Col } from "react-bootstrap";
 
 const ArticlesList = () => {
 	return (
-		<div className="columns">
-			<div className="column is-three-quarters">
-				<div className="section">
-					<div className="container">
-						{endpoints.map((endpoint, index) => (
-							<Category
-								key={index}
-								title={endpoint.title}
-								subreddits={endpoint.paths}
-							/>
-						))}
-					</div>
-				</div>
-			</div>
-		</div>
+		<Container>
+			<Row>
+				<Col md={8}>
+					{endpoints.map((endpoint, index) => (
+						<Category
+							key={index}
+							title={endpoint.title}
+							subreddits={endpoint.paths}
+						/>
+					))}
+				</Col>
+			</Row>
+		</Container>
 	);
 };
 
