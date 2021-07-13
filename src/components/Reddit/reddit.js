@@ -1,19 +1,19 @@
 import React from "react";
 import { endpoints } from "../../endpoints";
-import Category from "../category/category";
+import Category from "./partials/category";
 import { Container, Row, Col } from "react-bootstrap";
 
-const ArticlesList = () => {
+const Reddit = () => {
 	return (
 		<Container>
 			<Row>
-				<Col md={8}>
+				<Col md={12}>
 					{/* Qui al posto del map devi matchare la categoria dei parametri url con quella presente dentro la configurazione */}
 					{endpoints.map((endpoint, index) => (
 						<Category
 							key={index}
 							title={endpoint.title}
-							subreddits={endpoint.paths}
+							subreddits={endpoint.redditPath}
 						/>
 					))}
 				</Col>
@@ -22,4 +22,4 @@ const ArticlesList = () => {
 	);
 };
 
-export default ArticlesList;
+export default Reddit;

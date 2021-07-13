@@ -1,5 +1,5 @@
 import React from "react";
-import Subreddit from "../subreddit/subreddit";
+import Subreddit from "./subreddit";
 
 const Category = ({ title, subreddits }) => {
 	return (

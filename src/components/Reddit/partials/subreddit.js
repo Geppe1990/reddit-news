@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { get } from "../../helpers";
+import { get } from "../../../helpers";
 import { Card, CardColumns } from "react-bootstrap";
 
 const Subreddit = ({ title, path }) => {
 	const [posts, setPosts] = useState([]);
+	const timeSort = "week";
+	const limit = 5;
 
 	useEffect(() => {
 		get(
-			`https://www.reddit.com/r/${path}/top.json?limit=15&t=day`,
+			`https://www.reddit.com/r/${path}/top.json?limit=${limit}&t=${timeSort}`,
 			(response) => {
 				setPosts(response.data.children);
 			}

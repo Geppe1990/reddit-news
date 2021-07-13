@@ -1,11 +1,11 @@
 import React from "react";
 import "./home.scss";
-import ArticlesList from "../articlesList/articlesList";
+import Reddit from "../Reddit/reddit";
 
 const Home = () => {
 	return (
 		<div className="home">
-			<ArticlesList />
+			<Reddit />
 		</div>
 	);
 };
