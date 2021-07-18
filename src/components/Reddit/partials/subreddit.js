@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { get } from "../../../helpers";
-import { Card, CardColumns } from "react-bootstrap";
+import { CardColumns } from "react-bootstrap";
+import CardWrapper from "../../UI/cardWrapper";
 
 const Subreddit = ({ title, path }) => {
 	const [posts, setPosts] = useState([]);
@@ -22,27 +23,14 @@ const Subreddit = ({ title, path }) => {
 			<CardColumns>
 				{posts.length > 0 ? (
 					posts.map((key, index) => (
-						<Card key={index} className="bg-primary">
-							<Card.Body>
-								<Card.Title className="h6 m-0">
-									<a
-										href={`https://reddit.com${key.data.permalink}`}
-										target="_blank"
-										rel="noreferrer"
-										className="text-white"
-									>
-										<span
-											dangerouslySetInnerHTML={{
-												__html: key.data.title
-											}}
-										/>
-									</a>
-								</Card.Title>
-								{/* <Card.Text>
-									{key.data.selftext.slice(0, 100)}
-								</Card.Text> */}
-							</Card.Body>
-						</Card>
+						<CardWrapper
+							key={index}
+							color="text-white"
+							bgColor="bg-primary"
+							link={`https://reddit.com${key.data.permalink}`}
+							// content={key.data.selftext.slice(0, 100)}
+							title={key.data.title}
+						/>
 					))
 				) : (
 					<div>No results</div>
